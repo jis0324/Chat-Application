@@ -1,0 +1,15 @@
+var socketEvents = {
+  updateRooms: 'updaterooms',
+  usernames: 'usernames',
+  updatechat: 'updatechat',
+  newMessage: 'new message',
+  loadOldMsgs: 'load old msgs',
+  newUser: 'new user',
+  publicRoomSave: 'publicRoomSave',
+  privateRoomSave: 'privateRoomSave',
+  sendIndividualMessage: 'send individual message',
+  individualChat: 'individualChat',
+  myChat: 'myChat',
+  sendMessage: 'send message',
+  singleUser: 'singleUser',
+}

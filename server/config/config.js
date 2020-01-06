@@ -1,0 +1,20 @@
+module.exports = {
+    'database': 'mongodb://localhost/chat_app_db',
+    'port': 8080,
+    'connection': 'connection',
+    'updaterooms': 'updaterooms',
+    'publicRoomSave': 'publicRoomSave',
+    'privateRoomSave': 'privateRoomSave',
+    'privateRoomJoin': 'privateRoomJoin',
+    'singleUser': 'singleUser',
+    'updatechat': 'updatechat',
+    'newUser': 'new user',
+    'loadOldMsgs': 'load old msgs',
+    'sendMessage': 'send message',
+    'sendIndividualMessage': 'send individual message',
+    'newMessage': 'new message',
+    'individualChat': 'individualChat',
+    'myChat': 'myChat',
+    'disconnect': 'disconnect',
+    'usernames': 'usernames'
+  }

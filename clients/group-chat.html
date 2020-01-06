@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <title>Group Chat on Node.js</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/individual.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="/"><img src="/img/user.png"></a>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li> <a class="nav-link" href="/">Home</a></li>
+                <li> <a class="nav-link" href="/single-chat">Single Chat</a></li>
+                <li> <a class="nav-link" href="/group-chat">Chat Rooms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="panel panel-primary sel-room">
+        <div class="panel-heading">
+            <span>Select the group or Create</span>
+            <div>
+                <input type="button" class="btn btn-info" id="public_group_add" value="+ Public Group" />
+                <input type="button" class="btn btn-info" id="private_group_add" value="+ Private Group" />
+                <input type="button" class="btn btn-info" id="private_group_join" value="Join Private Group" />
+            </div>
+
+        </div>
+        <div class="panel-body">
+            <div id="roomError" style="color: red;"></div>
+            <div id="public_group_add_div">
+                <input id="public_group_name" class="form-control" placeholder="Input Public Group Name" />
+                <input id="public_group_add_btn" type="button" class="btn btn-success" value="save" />
+                <input id="public_group_add_can" type="button" class="btn btn-danger" value="cancel" />
+            </div>
+            <div id="private_group_add_div">
+                <input id="private_group_name" class="form-control" placeholder="Input Private Group Name" />
+                <input id="private_group_add_btn" type="button" class="btn btn-success" value="save" />
+                <input id="private_group_add_can" type="button" class="btn btn-danger" value="cancel" />
+            </div>
+            <div id="private_group_join_div">
+                <input id="private_group_join_name" class="form-control" placeholder="Input Private Group Name" />
+                <input id="private_group_join_btn" type="button" class="btn btn-success" value="join" />
+                <input id="private_group_join_can" type="button" class="btn btn-danger" value="cancel" />
+            </div>
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media-body">
+                        <div id="rooms"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="nickWrap">
+        <div class="form">
+            <h2>Input your name!</h2>
+            <p id="nickError" style="color: #d43f3a"></p>
+
+            <form id="setNick">
+                <input id="nickName" type="text" class="form-control" placeholder="Input Username" />
+                <button>Start Chat</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3 userWrap">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                ONLINE USERS
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-body">
+                            <div id="users">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 contentWrap">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                CHAT HISTORY
+            </div>
+            <div class="panel-footer">
+                <div class="input-group">
+                    <!-- <form method="POST" action="/saveImage" enctype="multipart/form-data"> -->
+                    <input class="form-control" placeholder="Enter a message:" size="105" id="message"
+                        style="width:100%"></input>
+                    <!-- <input type="file" class="form-control" id="uploadFile" name="uploadFile" style="width: 20%;"> -->
+                    <span class="input-group-btn">
+                        <input type="button" id="send" name="send" class="btn btn-info" value="SEND">
+                    </span>
+                    <!-- </form> -->
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-body">
+                            <div id="chat">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="notification"> </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 class="modal-user"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="panel-body">
+                    <ul class="media-list">
+                        <li class="media">
+                            <div class="media-body">
+                                <div id="idividual_chat">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer input-group">
+                <!-- <form method="POST" action="/saveImage" enctype="multipart/form-data"> -->
+                <input class="form-control" placeholder="Enter a message:" size="105" id="individual_message"
+                    style="width:100%"></input>
+                <!-- <input type="file" class="form-control" id="uploadFile" name="uploadFile" style="width: 20%;"> -->
+                <span class="input-group-btn">
+                    <input type="button" id="individual_send" name="send" class="btn btn-info" value="SEND">
+                </span>
+                <!-- </form> -->
+                <input type="hidden" id="me" value="">
+                <input type="hidden" id="you" value="">
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="username" />
+    <input type="hidden" id="groupname" />
+</body>
+
+<script src="../../socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/js/config.js"></script>
+<script src="/js/groupChatPage.js"></script>
+<script src="/js/individual.js"></script>
+
+</html>

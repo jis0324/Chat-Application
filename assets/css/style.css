@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 13px Helvetica, Arial;
+    
+}
+.index-body {
+    background-image: url('/img/background.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* navbar */
+
+
+nav.navbar {
+    display: flex;
+    border-bottom: 2px solid;
+    border-color: rgba(220,220,220,.8);
+}
+nav img {
+    width: 50px;
+}
+.navbar-collapse {
+    padding: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0 30px;
+}
+nav ul li {
+    margin: 0 20px;
+    align-items: center;
+}
+
+/* Home page content */
+.select-method {
+    width: 400px;
+    margin: 20% auto;
+    display: flex;
+    justify-content: space-between;
+}
+.select-method a {
+    color: black;
+    display: block;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Chat room  */
+.nickWrap {
+    width: 420px;
+    margin: auto;
+    text-align: center;
+    border: 1px dashed grey;
+    border-radius: 20px;
+    padding: 30px;
+    display: none;
+}
+.nickWrap #setNick button {
+    margin-top: 20px;
+    width: 100px;
+}
+.sel-room {
+    width: 700px;
+    margin: auto;
+}
+.sel-room .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#public_group_add_div, #private_group_add_div, #private_group_join_div {
+    display: none;
+
+}
+#rooms .btn-roomin {
+    color: #fff;
+    background-color: #e86d24;
+    border-color: #e86d24;
+}
+.userWrap, .contentWrap {
+    display: none;
+}
+.display-flex {
+    display: flex;
+    align-items: center;
+}
+.user-select {
+    cursor: pointer;
+    width: 100%;
+}
+#users .media > a {
+    cursor: pointer;
+}
+.user-select:hover {
+    background-color: #cccccc;
+}

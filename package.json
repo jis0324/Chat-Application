@@ -1,0 +1,24 @@
+{
+  "name": "node-chat",
+  "version": "1.0.0",
+  "description": "chatting app",
+  "main": "bundle.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "confirm-dialog": "^0.1.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.17.1",
+    "module_name": "^1.0.0",
+    "mongoose": "^4.9.7",
+    "prompt": "^1.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JIS",
+  "license": "ISC"
+}

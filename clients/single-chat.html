@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>Group Chat on Node.js</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="/"><img src="/img/user.png"></a>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav">
+                <li> <a class="nav-link" href="/">Home</a></li>
+                <li> <a class="nav-link" href="/single-chat">Single Chat</a></li>
+                <li> <a class="nav-link" href="/group-chat">Chat Rooms</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="nickWrap" style="display: block;">
+        <div class="form">
+            <h2>Input your name!</h2>
+            <p id="nickError" style="color: #d43f3a"></p>
+
+            <form id="setNick">
+                <input id="nickName" type="text" class="form-control" placeholder="Input Username" />
+                <button>Start Chat</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-3 userWrap">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                ONLINE USERS
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-body">
+                            <div id="users">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 contentWrap">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                CHAT HISTORY
+            </div>
+            <div class="panel-footer">
+                <div class="input-group">
+                    <!-- <form method="POST" action="/saveImage" enctype="multipart/form-data"> -->
+                    <input class="form-control" placeholder="Enter a message:" size="105" id="message"
+                        style="width:100%"></input>
+                    <!-- <input type="file" class="form-control" id="uploadFile" name="uploadFile" style="width: 20%;"> -->
+                    <span class="input-group-btn">
+                        <input type="button" id="send" name="send" class="btn btn-info" value="SEND">
+                    </span>
+                    <!-- </form> -->
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li class="media">
+                        <div class="media-body">
+                            <div id="chat">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="notification"></div>
+        </div>
+    </div>
+    <input type="hidden" id="username" />
+    <input type="hidden" id="groupname" />
+</body>
+
+<script src="../../socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="/js/config.js"></script>
+<script src="/js/singleChatPage.js"></script>
+
+</html>
